@@ -1,0 +1,129 @@
+
+
+
+  <div class="title">
+    <h2>Formulario con libreria NG-ZORRO</h2>
+  </div>
+
+  <div class="container-form" >
+
+    <div>
+      <h2 class="title">Formulario</h2>
+    </div>
+
+    <form  nz-form [formGroup]="myForms" class="login-form" (ngSubmit)="submit()" >
+
+      <div>
+        <label for="firstName">Primer nombre</label>
+        <input
+          id="firstName"
+          nz-input
+          nzSize="large"
+          maxlength="10"
+          minlength="4"
+          placeholder="Primer nombre"
+          type="text"
+          formControlName="firstName"
+          >
+          <div class="error" *ngIf="invalidField('firstName')" >
+            <span  *ngIf="myForms.controls?.['firstName']?.errors?.['pattern']"> Solo se permiten letras </span>
+            <span  *ngIf="myForms.controls?.['firstName']?.errors?.['required']" > Campo Obligatorio </span>
+            <span  *ngIf="myForms.controls?.['firstName']?.errors?.['minlength']" > Minimo 4 caracteres </span>
+          </div>
+      </div>
+      <div>
+        <label for="secondName">Segundo nombre</label>
+        <input
+          id="secondName"
+          nz-input
+          nzSize="large"
+          maxlength="10"
+          minlength="4"
+          placeholder="Segundo nombre"
+          type="text"
+          formControlName="secondName"
+          >
+          <div class="error" *ngIf="invalidField('secondName')" >
+            <span  *ngIf="myForms.controls?.['secondName']?.errors?.['pattern']"> Solo se permiten letras </span>
+            <span  *ngIf="myForms.controls?.['secondName']?.errors?.['required']" > Campo Obligatorio </span>
+            <span  *ngIf="myForms.controls?.['secondName']?.errors?.['minlength']" > Minimo 4 caracteres </span>
+          </div>
+      </div>
+      <div>
+        <label for="firstSurname">Primer apellido</label>
+        <input
+          id="firstSurname"
+          nz-input
+          nzSize="large"
+          maxlength="10"
+          minlength="4"
+          placeholder="Primer apellido"
+          type="text"
+          formControlName="firstSurname"
+          >
+          <div class="error" *ngIf="invalidField('firstSurname')" >
+            <span  *ngIf="myForms.controls?.['firstSurname']?.errors?.['pattern']"> Solo se permiten letras </span>
+            <span  *ngIf="myForms.controls?.['firstSurname']?.errors?.['required']" > Campo Obligatorio </span>
+            <span  *ngIf="myForms.controls?.['firstSurname']?.errors?.['minlength']" > Minimo 4 caracteres </span>
+          </div>
+      </div>
+      <div>
+        <label for="secondSurname">Segundo apellido</label>
+        <input
+          is="secondSurname"
+          nz-input
+          nzSize="large"
+          maxlength="10"
+          minlength="4"
+          placeholder="Segundo apellido"
+          type="text"
+          formControlName="secondSurname"
+          >
+          <div class="error" *ngIf="invalidField('secondSurname')" >
+            <span  *ngIf="myForms.controls?.['secondSurname']?.errors?.['pattern']"> Solo se permiten letras </span>
+            <span  *ngIf="myForms.controls?.['secondSurname']?.errors?.['required']" > Campo Obligatorio </span>
+            <span  *ngIf="myForms.controls?.['secondSurname']?.errors?.['minlength']" > Minimo 4 caracteres </span>
+          </div>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input
+          id="email"
+          nz-input
+          nzSize="large"
+          placeholder="Email"
+          type="text"
+          formControlName="email"
+          >
+        <div class="error" *ngIf="invalidField('email')" >
+          {{emailErrors}}
+        </div>
+      </div>
+      <div>
+        <label for="telefono">Telefono</label>
+        <input
+          id="telefono"
+          nz-input
+          nzSize="large"
+          minlength="4"
+          maxlength="10"
+          placeholder="Telefono"
+          type="text"
+          formControlName="phone"
+          >
+          <div class="error" *ngIf="invalidField('phone')" >
+            <span  *ngIf="myForms.controls?.['phone']?.errors?.['pattern']"> Solo se permiten numeros </span>
+            <span  *ngIf="myForms.controls?.['phone']?.errors?.['required']" > Campo Obligatorio </span>
+            <span  *ngIf="myForms.controls?.['phone']?.errors?.['minlength']" > Minimo 4 caracteres </span>
+          </div>
+      </div>
+      <label formControlName="termsConditions" nz-checkbox >Aceptar terminos y condiciones</label>
+      <span class="error" *ngIf="invalidField('termsConditions')" >Por favor acepte los terminos y condiciones</span>
+
+      <div class="btn">
+        <button type="submit" nz-button nzType="primary" >Enviar</button>
+      </div>
+
+    </form>
+  </div>
+

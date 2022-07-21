@@ -1,0 +1,31 @@
+.title {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.login-form {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+input {
+  margin-bottom: 20px;
+}
+
+.btn {
+  margin-top: 20px;
+}
+
+.error {
+  color: rgb(245, 12, 12);
+}
+
+.container-form {
+  width: 450px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 1px solid #039166;
+  border-radius: 5px;
+  padding-bottom: 40px;
+}

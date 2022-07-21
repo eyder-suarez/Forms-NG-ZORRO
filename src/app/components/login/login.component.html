@@ -1,0 +1,54 @@
+<div>
+  <h2 class="title">Formulario de login</h2>
+</div>
+
+<div class="container-form">
+
+  <div>
+    <h2 class="title">Login</h2>
+  </div>
+
+<form nz-form action="" [formGroup]="myForm" class="login-form">
+
+  <div>
+    <label for="correo">Email</label>
+    <input
+          nz-input
+          nzSize="large"
+          type="email"
+          id="correo"
+          placeholder="Email"
+          formControlName="email"
+          >
+          <span class="error" *ngIf="fieldValidate('email')" >{{msgErrorEmail}}</span>
+  </div>
+  <div>
+    <label for="password">Contraseña</label>
+    <input
+          nz-input
+          nzSize="large"
+          type="password"
+          id="password"
+          placeholder="Password"
+          formControlName="password"
+          >
+          <span class="error" *ngIf="fieldValidate('password')" >Campo obligatorio</span>
+  </div>
+  <div>
+    <label for="confirPassword">Confirmar contraseña</label>
+    <input
+          nz-input
+          nzSize="large"
+          type="password"
+          id="confirPassword"
+          placeholder="Confirmar contraseña"
+          formControlName="confirmPassword"
+          >
+          <span class="error" *ngIf="fieldValidate('confirmPassword')" >Campo obligatorio</span>
+  </div>
+
+  <div>
+    <button nz-button nzType="primary" >Registrarse</button>
+  </div>
+</form>
+</div>
