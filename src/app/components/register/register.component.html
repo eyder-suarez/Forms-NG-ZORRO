@@ -1,11 +1,11 @@
 <div>
-  <h2 class="title">Formulario de registro</h2>
+  <h2 class="title">Formulario de login</h2>
 </div>
 
 <div class="container-form">
 
   <div>
-    <h2 class="title">Registro</h2>
+    <h2 class="title">Login</h2>
   </div>
 
 <form nz-form  [formGroup]="myForm" class="login-form" (ngSubmit)="submit()" >
@@ -38,22 +38,9 @@
           </div>
   </div>
   <div>
-    <label for="confirPassword">Confirmar contraseña</label>
-    <input
-          nz-input
-          nzSize="large"
-          type="password"
-          id="confirPassword"
-          placeholder="Confirmar contraseña"
-          formControlName="confirmPassword"
-          >
-            <span class="error" *ngIf="fieldValidate('confirmPassword')">Las contraseñas deben ser iguales</span>
-  </div>
-
-  <div>
     <button type="submit" nz-button nzType="primary" >Registrarse</button>
     <div>
-      <span>Si ya tienes un cuenta da clic <a [routerLink]="['/registro']">aqui</a></span>
+      <span>Si aun no tienes un cuenta da clic <a [routerLink]="['/login']">aqui</a></span>
     </div>
   </div>
  </form>

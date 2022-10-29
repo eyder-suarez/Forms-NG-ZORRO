@@ -23,10 +23,18 @@ input {
 }
 
 .container-form {
+  background-color: #cbeef3;
   width: 450px;
   margin-right: auto;
   margin-left: auto;
-  border: 1px solid #910351;
   border-radius: 5px;
   padding-bottom: 40px;
+  margin-bottom: 20px;
+}
+.btns {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
 }

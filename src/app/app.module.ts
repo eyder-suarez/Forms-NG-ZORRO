@@ -10,6 +10,8 @@ import { registerLocaleData } from '@angular/common';
 import es from '@angular/common/locales/es';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 registerLocaleData(es);
 
@@ -19,10 +21,13 @@ registerLocaleData(es);
   ],
   imports: [
     BrowserModule,
-    ComponentsModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule,
+    ComponentsModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [{ provide: NZ_I18N, useValue: es_ES }],
   bootstrap: [AppComponent]

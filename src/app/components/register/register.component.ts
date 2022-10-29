@@ -1,53 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
-  /**
+
+   /**
    * Una expresión regular que valida una dirección de correo electrónico.
    */
-  public emailPattern: string = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
+    public emailPattern: string = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
 
-  myForm!: FormGroup;
+    myForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private modal: NzModalService, private auth: AuthService) { }
+  constructor(private fb: FormBuilder, private modal: NzModalService) { }
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
       email          : ['', [Validators.required, Validators.pattern(this.emailPattern)]],
       password       : ['', [Validators.required, Validators.minLength(8)]],
-      confirmPassword: ['', [Validators.required,  Validators.minLength(8)]]
-    }, {
-      validators: [this.fieldsEqual('password', 'confirmPassword')] //Opciones para validar todo el formulario
     })
   }
 
-
-  /**
-   * Funcion para validar la contraseña que sean iguales los dos campos
-   * @param field1 Campo de la contraseña
-   * @param field2 Campo para confirmar la contraseña
-   * @returns Devuelve verdadero si los campos son iguales
-   */
-  fieldsEqual(field1: string, field2: string) {
-    return (formGroup: AbstractControl): ValidationErrors | null => {
-      const pass1 = formGroup.get(field1)?.value;
-      const pass2 = formGroup.get(field2)?.value;
-      if(pass1 !== pass2) {
-        formGroup.get(field2)?.setErrors({noEquals: true})
-        return {noEquals: true}
-      }
-      formGroup.get(field2)?.setErrors(null)
-      return null
-    }
-  }
 
   /**
    * Funcion para validar el campo de email
@@ -76,8 +54,8 @@ export class LoginComponent implements OnInit {
    */
     success(): void {
       this.modal.success({
-        nzTitle: 'Registro exitoso',
-        nzContent: 'Revisa tu correo y sigue las instruciones para continuar'
+        nzTitle: 'Inicio de sesion exitoso',
+        nzContent: 'Da en aceptar para continuar'
       });
     }
 
@@ -104,7 +82,6 @@ export class LoginComponent implements OnInit {
         this.myForm.reset()
       }
     }
-
 
 
 }
