@@ -1,0 +1,402 @@
+[
+    {
+        "id": 1,
+        "city": "Russia"
+    },
+    {
+        "id": 2,
+        "city": "France"
+    },
+    {
+        "id": 3,
+        "city": "China"
+    },
+    {
+        "id": 4,
+        "city": "Philippines"
+    },
+    {
+        "id": 5,
+        "city": "Germany"
+    },
+    {
+        "id": 6,
+        "city": "Croatia"
+    },
+    {
+        "id": 7,
+        "city": "Nigeria"
+    },
+    {
+        "id": 8,
+        "city": "Japan"
+    },
+    {
+        "id": 9,
+        "city": "Afghanistan"
+    },
+    {
+        "id": 10,
+        "city": "Colombia"
+    },
+    {
+        "id": 11,
+        "city": "Philippines"
+    },
+    {
+        "id": 12,
+        "city": "Indonesia"
+    },
+    {
+        "id": 13,
+        "city": "China"
+    },
+    {
+        "id": 14,
+        "city": "Brazil"
+    },
+    {
+        "id": 15,
+        "city": "Indonesia"
+    },
+    {
+        "id": 16,
+        "city": "Gambia"
+    },
+    {
+        "id": 17,
+        "city": "China"
+    },
+    {
+        "id": 18,
+        "city": "Mongolia"
+    },
+    {
+        "id": 19,
+        "city": "Pakistan"
+    },
+    {
+        "id": 20,
+        "city": "Russia"
+    },
+    {
+        "id": 21,
+        "city": "Russia"
+    },
+    {
+        "id": 22,
+        "city": "China"
+    },
+    {
+        "id": 23,
+        "city": "Moldova"
+    },
+    {
+        "id": 24,
+        "city": "Indonesia"
+    },
+    {
+        "id": 25,
+        "city": "China"
+    },
+    {
+        "id": 26,
+        "city": "Poland"
+    },
+    {
+        "id": 27,
+        "city": "China"
+    },
+    {
+        "id": 28,
+        "city": "Philippines"
+    },
+    {
+        "id": 29,
+        "city": "France"
+    },
+    {
+        "id": 30,
+        "city": "Afghanistan"
+    },
+    {
+        "id": 31,
+        "city": "Honduras"
+    },
+    {
+        "id": 32,
+        "city": "Finland"
+    },
+    {
+        "id": 33,
+        "city": "Czech Republic"
+    },
+    {
+        "id": 34,
+        "city": "China"
+    },
+    {
+        "id": 35,
+        "city": "China"
+    },
+    {
+        "id": 36,
+        "city": "Portugal"
+    },
+    {
+        "id": 37,
+        "city": "Colombia"
+    },
+    {
+        "id": 38,
+        "city": "United States"
+    },
+    {
+        "id": 39,
+        "city": "Brazil"
+    },
+    {
+        "id": 40,
+        "city": "Serbia"
+    },
+    {
+        "id": 41,
+        "city": "China"
+    },
+    {
+        "id": 42,
+        "city": "Pakistan"
+    },
+    {
+        "id": 43,
+        "city": "China"
+    },
+    {
+        "id": 44,
+        "city": "French Southern Territories"
+    },
+    {
+        "id": 45,
+        "city": "Croatia"
+    },
+    {
+        "id": 46,
+        "city": "South Korea"
+    },
+    {
+        "id": 47,
+        "city": "Norway"
+    },
+    {
+        "id": 48,
+        "city": "Mayotte"
+    },
+    {
+        "id": 49,
+        "city": "Zambia"
+    },
+    {
+        "id": 50,
+        "city": "Saudi Arabia"
+    },
+    {
+        "id": 51,
+        "city": "China"
+    },
+    {
+        "id": 52,
+        "city": "North Korea"
+    },
+    {
+        "id": 53,
+        "city": "Brazil"
+    },
+    {
+        "id": 54,
+        "city": "Indonesia"
+    },
+    {
+        "id": 55,
+        "city": "Libya"
+    },
+    {
+        "id": 56,
+        "city": "Mexico"
+    },
+    {
+        "id": 57,
+        "city": "Peru"
+    },
+    {
+        "id": 58,
+        "city": "Morocco"
+    },
+    {
+        "id": 59,
+        "city": "India"
+    },
+    {
+        "id": 60,
+        "city": "United States"
+    },
+    {
+        "id": 61,
+        "city": "Thailand"
+    },
+    {
+        "id": 62,
+        "city": "Thailand"
+    },
+    {
+        "id": 63,
+        "city": "Dominican Republic"
+    },
+    {
+        "id": 64,
+        "city": "Indonesia"
+    },
+    {
+        "id": 65,
+        "city": "Costa Rica"
+    },
+    {
+        "id": 66,
+        "city": "Portugal"
+    },
+    {
+        "id": 67,
+        "city": "Indonesia"
+    },
+    {
+        "id": 68,
+        "city": "Bolivia"
+    },
+    {
+        "id": 69,
+        "city": "Brazil"
+    },
+    {
+        "id": 70,
+        "city": "Yemen"
+    },
+    {
+        "id": 71,
+        "city": "United States"
+    },
+    {
+        "id": 72,
+        "city": "Albania"
+    },
+    {
+        "id": 73,
+        "city": "China"
+    },
+    {
+        "id": 74,
+        "city": "Yemen"
+    },
+    {
+        "id": 75,
+        "city": "Ecuador"
+    },
+    {
+        "id": 76,
+        "city": "China"
+    },
+    {
+        "id": 77,
+        "city": "Indonesia"
+    },
+    {
+        "id": 78,
+        "city": "Poland"
+    },
+    {
+        "id": 79,
+        "city": "United Kingdom"
+    },
+    {
+        "id": 80,
+        "city": "Argentina"
+    },
+    {
+        "id": 81,
+        "city": "Brazil"
+    },
+    {
+        "id": 82,
+        "city": "China"
+    },
+    {
+        "id": 83,
+        "city": "Russia"
+    },
+    {
+        "id": 84,
+        "city": "Malaysia"
+    },
+    {
+        "id": 85,
+        "city": "Indonesia"
+    },
+    {
+        "id": 86,
+        "city": "South Africa"
+    },
+    {
+        "id": 87,
+        "city": "Greece"
+    },
+    {
+        "id": 88,
+        "city": "Sweden"
+    },
+    {
+        "id": 89,
+        "city": "Portugal"
+    },
+    {
+        "id": 90,
+        "city": "Brazil"
+    },
+    {
+        "id": 91,
+        "city": "China"
+    },
+    {
+        "id": 92,
+        "city": "China"
+    },
+    {
+        "id": 93,
+        "city": "Sweden"
+    },
+    {
+        "id": 94,
+        "city": "Honduras"
+    },
+    {
+        "id": 95,
+        "city": "Japan"
+    },
+    {
+        "id": 96,
+        "city": "Palestinian Territory"
+    },
+    {
+        "id": 97,
+        "city": "Ukraine"
+    },
+    {
+        "id": 98,
+        "city": "China"
+    },
+    {
+        "id": 99,
+        "city": "China"
+    },
+    {
+        "id": 100,
+        "city": "China"
+    }
+]

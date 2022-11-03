@@ -14,6 +14,36 @@
     <form  nz-form [formGroup]="myForms" class="login-form" (ngSubmit)="submit()" >
 
       <div>
+        <label for="typeDocument">Tipo documento</label><br>
+        <nz-select nzPlaceHolder="Seleccione una opcion">
+          <nz-option nzValue="cedula" nzLabel="Cedula de ciudadania"></nz-option>
+          <nz-option nzValue="cedula extranjeria" nzLabel="Cedula de extranjera"></nz-option>
+          <nz-option nzValue="pasaporte" nzLabel="Pasaporte"></nz-option>
+          <nz-option nzValue="nit" nzLabel="NIT"></nz-option>
+        </nz-select>
+      </div>
+
+      <div>
+        <label for="numberDocument">Numero Documento</label>
+        <input
+          id="numberDocument"
+          nz-input
+          nzSize="large"
+          minlength="4"
+          maxlength="10"
+          placeholder="Numero documento"
+          type="text"
+          formControlName="numberDocument"
+          >
+          <div class="error" *ngIf="invalidField('numberDocument')" >
+            <span  *ngIf="myForms.controls?.['numberDocument']?.errors?.['pattern']"> Solo se permiten numeros </span>
+            <span  *ngIf="myForms.controls?.['numberDocument']?.errors?.['required']" > Campo Obligatorio </span>
+            <span  *ngIf="myForms.controls?.['numberDocument']?.errors?.['minlength']" > Minimo 4 caracteres </span>
+          </div>
+      </div>
+
+
+      <div>
         <label for="firstName">Primer nombre</label>
         <input
           id="firstName"
@@ -31,6 +61,7 @@
             <span  *ngIf="myForms.controls?.['firstName']?.errors?.['minlength']" > Minimo 4 caracteres </span>
           </div>
       </div>
+
       <div>
         <label for="secondName">Segundo nombre</label>
         <input
@@ -49,6 +80,7 @@
             <span  *ngIf="myForms.controls?.['secondName']?.errors?.['minlength']" > Minimo 4 caracteres </span>
           </div>
       </div>
+
       <div>
         <label for="firstSurname">Primer apellido</label>
         <input
@@ -67,10 +99,11 @@
             <span  *ngIf="myForms.controls?.['firstSurname']?.errors?.['minlength']" > Minimo 4 caracteres </span>
           </div>
       </div>
+
       <div>
         <label for="secondSurname">Segundo apellido</label>
         <input
-          is="secondSurname"
+          id="secondSurname"
           nz-input
           nzSize="large"
           maxlength="10"
@@ -85,6 +118,32 @@
             <span  *ngIf="myForms.controls?.['secondSurname']?.errors?.['minlength']" > Minimo 4 caracteres </span>
           </div>
       </div>
+
+      <div>
+        <label for="birthDate">Fecha nacimiento</label><br>
+        <nz-date-picker formControlName="birthDate" id="birthDate" ></nz-date-picker>
+      </div>
+
+      <div>
+        <label for="city">Ciudad</label>
+        <input
+          id="city"
+          nz-input
+          nzSize="large"
+          placeholder="Ciudad"
+          type="text"
+          [(ngModel)]="inputValue"
+          (input)="onInput($event)"
+          [nzAutocomplete]="auto"
+          formControlName="city"
+          >
+          <nz-autocomplete [nzDataSource]="options" nzBackfill #auto></nz-autocomplete>
+          <div class="error" *ngIf="invalidField('city')" >
+            <span  *ngIf="myForms.controls?.['city']?.errors?.['pattern']"> Solo se permiten letras </span>
+            <span  *ngIf="myForms.controls?.['city']?.errors?.['required']" > Campo Obligatorio </span>
+          </div>
+      </div>
+
       <div>
         <label for="email">Email</label>
         <input
@@ -99,6 +158,25 @@
           {{emailErrors}}
         </div>
       </div>
+
+      <div>
+          <label for="password">Password</label>
+          <input
+          id="password"
+          nz-input
+          minlength="8"
+          maxlength="12"
+          placeholder="Contraseña"
+          type="password"
+          formControlName="password"
+        />
+        <div class="error" *ngIf="invalidField('password')" >
+          <span  *ngIf="myForms.controls?.['password']?.errors?.['required']" > Campo Obligatorio </span>
+          <span  *ngIf="myForms.controls?.['password']?.errors?.['minlength']" > Minimo 8 caracteres </span>
+        </div>
+
+      </div>
+
       <div>
         <label for="telefono">Telefono</label>
         <input
@@ -117,6 +195,7 @@
             <span  *ngIf="myForms.controls?.['phone']?.errors?.['minlength']" > Minimo 4 caracteres </span>
           </div>
       </div>
+
       <label formControlName="termsConditions" nz-checkbox >Aceptar terminos y condiciones</label>
       <span class="error" *ngIf="invalidField('termsConditions')" >Por favor acepte los terminos y condiciones</span>
 

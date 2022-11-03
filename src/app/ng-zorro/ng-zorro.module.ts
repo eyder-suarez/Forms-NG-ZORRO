@@ -5,6 +5,11 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzModalService } from 'ng-zorro-antd/modal';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
+
+
 
 
 
@@ -18,13 +23,19 @@ import { NzModalService } from 'ng-zorro-antd/modal';
     NzFormModule,
     NzInputModule,
     NzCheckboxModule,
-    NzButtonModule
+    NzButtonModule,
+    NzSelectModule,
+    NzDatePickerModule,
+    NzAutocompleteModule
   ],
   exports: [
     NzFormModule,
     NzInputModule,
     NzCheckboxModule,
-    NzButtonModule
+    NzButtonModule,
+    NzSelectModule,
+    NzDatePickerModule,
+    NzAutocompleteModule
   ],
   providers: [
     NzModalService

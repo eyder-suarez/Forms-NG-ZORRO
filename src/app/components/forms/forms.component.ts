@@ -1,5 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation  } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { debounceTime, switchMap } from 'rxjs';
+import { Cities } from 'src/app/interfaces/city.interfaces';
+
+//Services
+import { DataService } from 'src/app/services/data.service';
+import { ValidationsService } from 'src/app/services/validations.service';
+
+//Imports Ng-Zorro
+import { getISOWeek } from 'date-fns';
+import { en_US, NzI18nService, zh_CN } from 'ng-zorro-antd/i18n';
 import { NzModalService } from 'ng-zorro-antd/modal';
 
 
@@ -12,34 +22,50 @@ export class FormsComponent implements OnInit {
 
   myForms!: FormGroup
 
-    /**
-   * Una expresión regular que valida una dirección de correo electrónico.
-   */
-     public emailPattern  : string = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
-     /**
-      * Una expresión regular que valida un número.
-      */
-     public numberPattern : string = "^([0-9]+)$";
-     /**
-      * Una expresión regular que valida una cadena con un máximo de 15 caracteres.
-      */
-     public lettersPattern: string = "[a-zA-Z ]{0,15}";
+  public listCities: any
+  public passwordVisible = false;
+  public password?: string;
+  public inputValue?: string;
+  public options: string[] = [];
 
-  constructor(private fb: FormBuilder, private modal: NzModalService) { }
+
+  constructor(
+    private fb: FormBuilder,
+    private modal: NzModalService,
+    private dataServices: DataService,
+    private validations: ValidationsService
+    ) { }
 
   ngOnInit(): void {
 
+      this.dataServices.getCities().subscribe((resp) => {
+        this.listCities = resp
+      })
+
+
     this.myForms = this.fb.group({
-      firstName      : ['', [Validators.required, Validators.pattern(this.lettersPattern)]],
-      secondName     : ['', [Validators.required, Validators.pattern(this.lettersPattern)]],
-      firstSurname   : ['', [Validators.required, Validators.pattern(this.lettersPattern)]],
-      secondSurname  : ['', [Validators.required, Validators.pattern(this.lettersPattern)]],
-      email          : ['', [Validators.required, Validators.pattern(this.emailPattern)]],
-      phone          : ['', [Validators.required, Validators.pattern(this.numberPattern)]],
-      termsConditions: [ , [Validators.requiredTrue]]
+      typeDocument   : ['', []],
+      numberDocument : ['', [Validators.required, Validators.pattern(this.validations.numberPattern)]],
+      firstName      : ['', [Validators.required, Validators.pattern(this.validations.lettersPattern)]],
+      secondName     : ['', [Validators.required, Validators.pattern(this.validations.lettersPattern)]],
+      firstSurname   : ['', [Validators.required, Validators.pattern(this.validations.lettersPattern)]],
+      secondSurname  : ['', [Validators.required, Validators.pattern(this.validations.lettersPattern)]],
+      birthDate      : ['', []],
+      city           : ['', [Validators.required, Validators.pattern(this.validations.lettersPattern)]],
+      email          : ['', [Validators.required, Validators.pattern(this.validations.emailPattern)]],
+      password       : ['', [Validators.required]],
+      phone          : ['', [Validators.required, Validators.pattern(this.validations.numberPattern)]],
+      termsConditions: [ ,  [Validators.requiredTrue]]
+
     })
 
   }
+
+  onInput(event: Event): void {
+    const value = (event.target as HTMLInputElement).value;
+    this.options = value ? this.listCities : [];
+  }
+
 
   /**
    * Funcion para validar el campo de email
